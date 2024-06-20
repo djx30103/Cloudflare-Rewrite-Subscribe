@@ -230,7 +230,7 @@
 
 ### 示例 8: 在 `Surge` 配置中，添加跳过代理
 
-在`others`表中，此时会先找到分组`General`，其次找到`skip-proxy`字段，将`value`添加到`index`的位置，此次加载最末尾
+在`others`表中，此时会先找到分组`General`，其次找到`skip-proxy`字段，将`value`添加到`index`的位置，`0`则加到末尾
 
 | source | priority | index | action   | field            | value              | cipher |
 |--------|----------|-------|----------|------------------|--------------------|--------|
@@ -256,7 +256,7 @@
 
 | source | priority | index | action | field           | value | cipher |
 |--------|----------|-------|--------|-----------------|-------|--------|
-| surge  | 0        | 0     | set    | log-level | warn	 | <null> |
+| clash  | 0        | 0     | set    | log-level | warn	 | <null> |
 
 ---
 
@@ -267,7 +267,7 @@
 
 | source | priority | index | action | field           | value | cipher |
 |--------|----------|-------|--------|-----------------|-------|--------|
-| surge  | 0        | 0     | remove | allow-lan | <null>	 | <null> |
+| clash  | 0        | 0     | remove | allow-lan | <null>	 | <null> |
 
 ---
 
