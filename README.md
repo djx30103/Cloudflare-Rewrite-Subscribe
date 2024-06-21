@@ -85,7 +85,7 @@
 | source   | TEXT    |             | 支持的来源<br/>可以填写 `surge`、`clash`<br/>如果不填则适用于所有来源。                                                                                                                                                                                         |
 | priority | INTEGER | 0           | 排序字段，正序排列<br/>优先级越低越先执行<br/>0 表示最先执行。                                                                                                                                                                                                    |
 | index    | INTEGER | 0           | 插入的索引位置<br/>0 表示最末尾<br/>1 表示第一位。                                                                                                                                                                                                         |
-| action   | TEXT    | 'must add'  | 操作类型<br/>`must add`：必须添加，如果`value`不存在则会创建操作<br/>`add`：添加，如果`value`不存在则忽略<br/>`set`：设置，如果不存在会创建，将`value`的值设置为`proxies`中的值<br/>`remove`：删除，<br/>如果没有`proxies`值，会删除组名为`value`以及组内为`value`的<br/>如果存在`proxies`，则只会删除`value`组内的`proxies`值 |
+| action   | TEXT    | 'must add'  | 操作类型<br/>`must add`：必须添加，如果`value`不存在则会创建<br/>`add`：添加，如果`value`不存在则忽略<br/>`set`：设置，如果不存在会创建，将`value`的值设置为`proxies`中的值<br/>`remove`：删除，<br/>如果没有`proxies`值，会删除组名为`value`以及组内为`value`的<br/>如果存在`proxies`，则只会删除`value`组内的`proxies`值 |
 | value    | TEXT    |             | 组名<br/>可多个，以`,`分隔<br/>`*`表示所有<br/>`-`表示排除，需要排除的每个元素前都要加上-<br/>例如：`*, -🚀 节点选择` 表示除了`🚀 节点选择`以外的所有组                                                                                                                                                       |
 | proxies  | TEXT    |             | 相关代理信息，可以为节点名，或者组名<br/>当为组名时，不存在不会创建，即使`action` 为 `must add`<br/>可多个，以`,`分隔<br/>`*`表示所有<br/>`-`表示排除，需要排除的每个元素前都要加上-<br/>                                                                                                                                 |
 
@@ -125,7 +125,7 @@
 | source   | TEXT    |             | 支持的来源，可以填写 `surge`、`clash`，如果不填则适用于所有来源。                                                                                                                                   |
 | priority | INTEGER | 0           | 排序字段，正序排列，优先级越低越先执行，0 表示最先执行。                                                                                                                                              |
 | index    | INTEGER | 0           | 插入的索引位置，0 表示最末尾，1 表示第一位。                                                                                                                                                   |
-| action   | TEXT    | 'must add'  | 操作类型<br/>`must add`：必须添加，如果`field`不存在则会创建操作<br/>`add`：添加，如果`field`不存在则忽略<br/>`set`：设置，如果不存在会创建，将值设置为`value`<br/>`remove`：删除，<br/>如果没有`value`值，则会删除最后一级的`field`字段<br/> |
+| action   | TEXT    | 'must add'  | 操作类型<br/>`must add`：必须添加，如果`field`不存在则会创建<br/>`add`：添加，如果`field`不存在则忽略<br/>`set`：设置，如果不存在会创建，将值设置为`value`<br/>`remove`：删除，<br/>如果没有`value`值，则会删除最后一级的`field`字段<br/> |
 | field    | TEXT    |             | 要操作的字段，如果有多级层级关系，用逗号分隔每一级。                                                                                                                                                 |
 | value    | TEXT    |             | 值，`不支持多个值`，会将整个value当成一个元素去判断是否重复等操作                                                                                                                                         |
 
